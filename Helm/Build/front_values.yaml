@@ -1,0 +1,5 @@
+project: gw
+
+context: git://github.com/benkenobi3/gw-front-react.git
+image: benkenobi3/gw-frontend
+tag: latest

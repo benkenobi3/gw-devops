@@ -17,6 +17,6 @@ spec:
   volumes:
     - name: config-json
       configMap:
-        name: {{ .Release.Name }}-secret
+        name: {{ .Release.Name }}-configmap
 
   restartPolicy: Never
