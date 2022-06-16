@@ -1,0 +1,15 @@
+project: gw
+
+containers:
+  backend:
+    image: benkenobi3/gw-backend:latest
+    name: backend
+    port: 5000
+  frontend:
+    image: benkenobi3/gw-frontend:latest
+    name: frontend
+    port: 80
+
+replicas: 1
+
+host: nginx.benkenobi3.ru

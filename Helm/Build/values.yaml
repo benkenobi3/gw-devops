@@ -1,0 +1,5 @@
+project: gw
+
+context: 
+image: backend
+tag: latest
