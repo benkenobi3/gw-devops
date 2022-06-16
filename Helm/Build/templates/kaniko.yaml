@@ -12,12 +12,11 @@ spec:
     - "--destination={{ .Values.image }}:{{ .Values.tag }}"
     volumeMounts:
     - name: config-json
-      mountPath: /kaniko/.docker/
+      mountPath: /kaniko/.docker
       readOnly: true
   volumes:
     - name: config-json
-      secret:
-        secretName: {{ .Release.Name }}-secret
-        optional: false
+      configMap:
+        name: {{ .Release.Name }}-secret
 
   restartPolicy: Never
