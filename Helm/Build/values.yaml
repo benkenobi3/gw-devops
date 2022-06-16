@@ -1,5 +1,5 @@
 project: gw
 
-context: 
-image: backend
+context: git://github.com/benkenobi3/gw-back-django.git#main
+image: benkenobi3/gw-backend
 tag: latest
