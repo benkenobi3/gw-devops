@@ -15,9 +15,16 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /front
         backend:
           service:
-            name: {{ .Release.Name }}-service
+            name: {{ .Release.Name }}-frontend-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: /back
+        backend:
+          service:
+            name: {{ .Release.Name }}-backend-service
             port:
               number: 80
