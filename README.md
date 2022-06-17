@@ -1,7 +1,13 @@
-#### Подготовка миникуба
-    minikube start --kubernetes-version 1.21.2
-    kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.15.1/cert-manager.crds.yaml
+#### Подготовка кубернетес
+    minikube start --kubernetes-version 1.21.12
 
+    kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.yaml
+
+#### Подготовка ингресс контроллера
+    kubectl create namespace ingress-nginx
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx
 
 #### Билд
     heml install build ./Helm/Build
@@ -9,4 +15,3 @@
 
 #### Запуск
     helm install app ./Heml/Apps
-

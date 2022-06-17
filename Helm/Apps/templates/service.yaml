@@ -4,8 +4,8 @@ metadata:
   name: {{ .Release.Name }}-service
 spec:
   selector:
-    app: {{ .Values.project }}
+    app: {{ .Release.Name }}-frontend-deployment
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: {{ .Values.containers.frontend.port }}
