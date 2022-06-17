@@ -15,7 +15,10 @@ spec:
         project: {{ .Values.project }}
     spec:
       containers:
-      - name: {{ .Values.containers.backend.name }}
-        image: {{ .Values.containers.backend.image }}
-        ports:
-        - containerPort: {{ .Values.containers.backend.port }}
+        - name: {{ .Values.containers.backend.name }}
+          image: {{ .Values.containers.backend.image }}
+          ports:
+            - containerPort: {{ .Values.containers.backend.port }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-configmap
