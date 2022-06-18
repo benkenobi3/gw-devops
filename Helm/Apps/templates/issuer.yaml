@@ -7,7 +7,7 @@ spec:
     email: vezde.max@gmail.com
     server: https://acme-staging-v02.api.letsencrypt.org/directory 
     privateKeySecretRef:
-      name: letsencrypt
+      name: tls-secret
     solvers:
     - http01:
        ingress:
