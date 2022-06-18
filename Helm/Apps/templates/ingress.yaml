@@ -10,7 +10,7 @@ spec:
   - hosts:
       - "{{ .Values.hosts.backend }}"
       - "{{ .Values.hosts.frontend }}"
-    secretName: tls-secret
+    secretName: tls-secret-prod
   rules:
   - host: {{ .Values.hosts.frontend }}
     http:
