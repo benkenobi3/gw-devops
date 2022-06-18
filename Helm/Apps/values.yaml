@@ -12,5 +12,6 @@ containers:
 
 replicas: 1
 
-host-backend: backend.benkenobi3.ru
-host-frontend: frontend.benkenobi3.ru
+hosts:
+  backend: backend.benkenobi3.ru
+  frontend: frontend.benkenobi3.ru

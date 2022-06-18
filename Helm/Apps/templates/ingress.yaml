@@ -8,11 +8,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ .Values.host-backend }}
-    - {{ .Values.host-frontend }}
+      - "{{ .Values.hosts.backend }}"
+      - "{{ .Values.hosts.frontend }}"
     secretName: tls-secret
   rules:
-  - host: {{ .Values.host-frontend }}
+  - host: {{ .Values.hosts.frontend }}
     http:
       paths:
       - pathType: Prefix
@@ -22,7 +22,7 @@ spec:
             name: {{ .Release.Name }}-frontend
             port:
               number: 80
-  - host: {{ .Values.host-backend }}
+  - host: {{ .Values.hosts.backend }}
     http:
       paths:
       - pathType: Prefix

@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-kaniko
 spec:
   containers:
-  - name: kaniko
+  - name: {{ .Release.Name }}-kaniko
     image: gcr.io/kaniko-project/executor:latest
     args:
     - "--dockerfile=Dockerfile"
